@@ -10,16 +10,16 @@ CREATE TABLE IF NOT EXISTS equipes (
 
 CREATE TABLE IF NOT EXISTS usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    email VARCHAR(100) UNIQUE,
-    senha VARCHAR(50) UNIQUE,
-    username VARCHAR(100) NOT NULL,
+    email_conta VARCHAR(100) UNIQUE,
+    senha_conta VARCHAR(50) UNIQUE,
+    username_conta VARCHAR(100) NOT NULL,
     id_equipe INT,
 	CONSTRAINT fk_equipe FOREIGN KEY (id_equipe) REFERENCES  equipes(id)
 );
 
 CREATE TABLE IF NOT EXISTS torneios (
 	id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
+    nome_torneio VARCHAR(100) NOT NULL,
     data_torneio DATE NOT NULL,
     premiacao INT NOT NULL,
     qnt_jogadores INT NOT NULL,
