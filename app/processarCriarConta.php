@@ -1,24 +1,39 @@
 <?php
 
-require_once __DIR__ . "/init.php";
+#require_once __DIR__ . "/init.php";
 
 if($_SERVER['REQUEST_METHOD'] == "POST" || isset($_POST)){
-    $senha = is_string($_POST['senha'] ?? null) ? trim($_POST['nome']) : '';
-    $email = is_string($_POST['email'] ?? null) ? trim($_POST['email']) : '';
-    $username = is_string($_POST['username'] ?? null) ? trim($_POST['email']) : '';
+    $senha = $_POST['senha'];
+    $email = $_POST['email'];
+    $username = $_POST['username'];
     
     if(
-        strlen($senha) > 50 || $senha == '') {
+        strlen(trim($senha)) > 50) {
             header("Location: criarConta.php?erro=SENHA");
             exit;
         }elseif(
-        strlen($email) > 100 || $email == '' ||
-        !filter_var($email, FILTER_VALIDATE_EMAIL)){
+        strlen(trim($senha)) < 8 || $senha == '' || !isset($senha)) {
+            header("Location: criarConta.php?erro=SENHA_ERRADO");
+            exit;
+        }elseif(
+        strlen(trim($email)) > 100){
             header("Location: criarConta.php?erro=EMAIL");
             exit;
         }elseif(
-        strlen($username) > 20 || $username == ''){
+        $email == '' || !isset($email) ||
+        !filter_var($email, FILTER_VALIDATE_EMAIL)){
+            header("Location: criarConta.php?erro=EMAIL_ERRADO");
+            exit;
+        }elseif(
+        strlen(trim($username)) > 20){
             header("Location: criarConta.php?erro=USERNAME");
             exit;
+        }elseif(
+        (!isset($username) || $username == '' || strlen(trim($username)) < 5) ){
+            header("Location: criarConta.php?erro=USERNAME_ERRADO");
+            exit;
+    }else{
+        header("Location: criarConta.php");
+        # ainda vou adicionar mais coisa
     }
 }
