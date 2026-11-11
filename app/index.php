@@ -51,7 +51,7 @@
             </section>
             <div class="fundoTorneios">
             <div class="torneios">
-                <a href=""><b><i>VER TORNEIOS</i></b></a>
+                <a href="torneios.php"><b><i>VER TORNEIOS</i></b></a>
             </div>
             </div>
         <?php require_once __DIR__ . "/rodape.php"?>
