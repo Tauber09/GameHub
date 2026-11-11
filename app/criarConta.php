@@ -56,6 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET" || isset($_GET['erro'])) {
             <?php endif ?>
             <a class="entrar" href="/app/entrarConta.php">Entrar na conta</a>
             <br>
+            <div class="separador">OU</div>
             <button type="submit">Criar</button>
         </form>
     </div>
