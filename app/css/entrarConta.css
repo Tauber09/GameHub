@@ -124,7 +124,7 @@ button:hover {
     display: inline-block;
     margin-top: 4px;
     font-family: Arial, sans-serif;
-    font-size: 19px;
+    font-size: 14px;
     line-height: 1.4;
     color: rgb(240, 140, 60);
     text-decoration: none;
@@ -137,4 +137,10 @@ button:hover {
 
 .texto-laranja {
     color: rgb(235, 120, 26);
+}
+
+.usuario {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
 }

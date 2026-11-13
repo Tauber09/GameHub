@@ -26,7 +26,7 @@
             <h2><i><b>INSCRIÇÕES ABERTAS!</b></i></h2>
         </div>
         <div class="texto-sobreposto3">
-            <h4><i><b>Mais de R$50.000 em prêmios para equipes!</b></i></h4>
+            <h4><i><b>Mais de R$20.000 em prêmios para equipes!</b></i></h4>
         </div>
         <div class="saiba">
             <a href=""><i>SAIBA MAIS...</i></a>
@@ -51,7 +51,7 @@
             </section>
             <div class="fundoTorneios">
             <div class="torneios">
-                <a href=""><b><i>VER TORNEIOS</i></b></a>
+                <a href="torneios.php"><b><i>VER TORNEIOS</i></b></a>
             </div>
             </div>
         <?php require_once __DIR__ . "/rodape.php"?>
