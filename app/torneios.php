@@ -12,7 +12,7 @@ $torneios = readAll($pdo, "torneios");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Torneios</title>
-    <link rel="stylesheet" href="/app/css/torneios.css">
+    <link rel="stylesheet" href="/app/css/torneio.css">
 </head>
 
 <body>
@@ -49,11 +49,7 @@ $torneios = readAll($pdo, "torneios");
                         <p>FORMATO DE EQUIPE: <span><?= htmlspecialchars($t['format_torneio']) ?></span></p>
                         <p>PREMIAÇÃO DE <span>R$ <?= number_format($t['premiacao'], 0, ',', '.') ?></span></p>
                         <p>INÍCIO: <span><?= substr($t['horainit_torneio'], 0, 5) ?></span></p>
-<<<<<<< Updated upstream
                         <p>DATA: <?= date('d/m/Y', strtotime($t['data_torneio'])); ?></p>
-=======
-                        <p>DATA: <span><?= $t['data_torneio'] ?></span></p>
->>>>>>> Stashed changes
                         <a href="#" class="inscrever">INSCREVER-SE</a>
                     </div>
                     <div class="card-img">
