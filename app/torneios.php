@@ -95,7 +95,6 @@ $torneios = readAll($pdo, "torneios");
             <?php endif ?>
         <?php endforeach ?>
     </section>
-
     <?php require_once __DIR__ . "/rodape.php"; ?>
 </body>
 
