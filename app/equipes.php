@@ -41,11 +41,11 @@ if (!empty($busca)) {
 
             <form action="" method="get" class="barra-pesquisa">
                 <input type="text" name="busca" value="<?= htmlspecialchars($busca ?? '') ?>" placeholder="Buscar equipe:" required class="pesquisar">
-                <button type="submit" class="enviar">Buscar</button>
-
                 <?php if (!empty($busca)): ?>
-                    <a href="?" class="limpar-filtro">Limpar</a>
-                <?php endif; ?>
+                    <div class="limpar"><a href="equipes.php#painel" class="limpar">Limpar</a></div>
+                <?php else: ?>
+                    <button type="submit" class="enviar">Buscar</button>
+                <?php endif ?>
             </form>
 
             <a href="#popup"><i>CRIAR <span>EQUIPE</span></i></a>
@@ -59,10 +59,14 @@ if (!empty($busca)) {
         <form class="criarConta" action="processaEquipes.php" method="POST">
             <div class="linha-superior">
                 
-                <label for="abrir-popup-logo" class="logo">
-                    ESCOLHA UMA LOGO
-                    <input type="file" id="logo" name="logo" accept="image/*" hidden>
-                </label>
+                <button type="button" popovertarget="popup-logos" class="logo" id="btn-abrir-logos">
+                    <span id="texto-logo">ESCOLHA UMA LOGO</span>
+                    <img id="preview-logo" src="" alt="Logo selecionada" style="display: none; width: 70%; height: 100%; object-fit: cover;">
+                </button>
+
+        <input type="hidden" name="logo_selecionada" id="logo_selecionada" value="">
+
+
 
                 
                 <div class="coluna-input">
