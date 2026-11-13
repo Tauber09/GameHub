@@ -83,7 +83,7 @@ $torneios = readAll($pdo, "torneios");
                         <p>INÍCIO: <?= substr($t['horainit_torneio'], 0, 5) ?></p>
 
                         <div class="card-comunidade-rodape">
-                            <a href="#" class="clica">CLICA AQUI</a>
+                            <a href="#" class="clica">CLICAR AQUI</a>
                             <img class="logo-gamehub" src="./img/logo.png" alt="GameHub">
                         </div>
                     </div>
