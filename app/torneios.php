@@ -49,7 +49,7 @@ $torneios = readAll($pdo, "torneios");
                         <p>FORMATO DE EQUIPE: <span><?= htmlspecialchars($t['format_torneio']) ?></span></p>
                         <p>PREMIAÇÃO DE <span>R$ <?= number_format($t['premiacao'], 0, ',', '.') ?></span></p>
                         <p>INÍCIO: <span><?= substr($t['horainit_torneio'], 0, 5) ?></span></p>
-                        <p>DATA: <span><?= $t['data_torneio'] ?></span></p>
+                        <p>DATA: <?= date('d/m/Y', strtotime($t['data_torneio'])); ?></p>
                         <a href="#" class="inscrever">INSCREVER-SE</a>
                     </div>
                     <div class="card-img">
