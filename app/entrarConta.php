@@ -51,11 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET" || isset($_GET['erro'])) {
         <?php if (isset($_SESSION['cadastrado'])): ?>
         <div class="form">
             <p class="texto-laranja" style="text-align:center; font-size:24px; margin:0;">VOCÊ ESTÁ CADASTRADO COMO:</p>
-            <div class="username">
-            <?php
-            echo $_SESSION['cadastrado']['username'];
-            ?>
-            </div>
+            <div class="usuario"> <?= $_SESSION['cadastrado']['username'] ?></div>
             <a class="entrar" href="sair_conta.php">SAIR DA CONTA?</a>
         </div>
         <?php endif ?>

@@ -26,7 +26,7 @@
             <h2><i><b>INSCRIÇÕES ABERTAS!</b></i></h2>
         </div>
         <div class="texto-sobreposto3">
-            <h4><i><b>Mais de R$50.000 em prêmios para equipes!</b></i></h4>
+            <h4><i><b>Mais de R$20.000 em prêmios para equipes!</b></i></h4>
         </div>
         <div class="saiba">
             <a href=""><i>SAIBA MAIS...</i></a>
