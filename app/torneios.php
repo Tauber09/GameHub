@@ -12,7 +12,7 @@ $torneios = readAll($pdo, "torneios");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Torneios</title>
-    <link rel="stylesheet" href="/app/css/torneio.css">
+    <link rel="stylesheet" href="/app/css/torneios.css">
 </head>
 
 <body>
