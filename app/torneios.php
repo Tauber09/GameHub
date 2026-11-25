@@ -51,7 +51,7 @@ $torneios = readAll($pdo, "torneios");
                         <p>PREMIAÇÃO DE <span>R$ <?= number_format($t['premiacao'], 0, ',', '.') ?></span></p>
                         <p>INÍCIO: <span><?= substr($t['horainit_torneio'], 0, 5) ?></span></p>
                         <p>DATA: <?= date('d/m/Y', strtotime($t['data_torneio'])); ?></p>
-                        <a href="#" class="inscrever">INSCREVER-SE</a>
+                        <a href="inscricaoTorneio.php?id=<?= $t['id'] ?>" class="inscrever">INSCREVER-SE</a>
                     </div>
                     <div class="card-img">
                         <img src="./img/<?= $slugimg ?>.jpg" alt="<?= htmlspecialchars($t['img']) ?>">
@@ -85,7 +85,7 @@ $torneios = readAll($pdo, "torneios");
                         <p>INÍCIO: <?= substr($t['horainit_torneio'], 0, 5) ?></p>
 
                         <div class="card_comunidade_rodape">
-                            <a href="#" class="clica">CLICAR AQUI</a>
+                            <a href="inscricaoTorneio.php?id=<?= $t['id'] ?>" class="clica">CLICAR AQUI</a>
                             <img class="logo-gamehub" src="./img/logo.png" alt="GameHub">
                         </div>
                     </div>
