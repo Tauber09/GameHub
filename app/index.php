@@ -6,10 +6,62 @@
     $stmt = $pdo->query($sql);
     $torneio = $stmt->fetch();
     $img = null;
+    $texto = null;
+    $saiba = null;
+    $exploracao = null;
+    $jogos = null;
+    $torneios = null;
     $id = $torneio['id'];
 
     if($torneio['nmjogo_torneio'] == "Counter-Strike 2"){
         $img = "./img/cs2_banner.png";
+        $texto = "texto-sobreposto-cs2";
+        $saiba = "saiba-cs2";
+        $exploracao = "exploração-cs2";
+        $jogos = "jogos-cs2";
+        $torneios = "torneios-cs2";
+    }elseif($torneio['nmjogo_torneio'] == "Valorant"){
+        $img = "./img/banner_valorant.png";
+        $texto = "texto-sobreposto-valorant";
+        $saiba = "saiba-valorant";
+        $exploracao = "exploração-valorant";
+        $jogos = "jogos-valorant";
+        $torneios = "torneios-valorant";
+    }elseif($torneio['nmjogo_torneio'] == "Rocket League"){
+        $img = "./img/banner_rocket.png";
+        $texto = "texto-sobreposto-rocket";
+        $saiba = "saiba-rocket";
+        $exploracao = "exploração-rocket";
+        $jogos = "jogos-rocket";
+        $torneios = "torneios-rocket";
+    }elseif($torneio['nmjogo_torneio'] == "Fortnite"){
+        $img = "./img/banner-fortnite.png";
+        $texto = "texto-sobreposto-fortnite";
+        $saiba = "saiba-fortnite";
+        $exploracao = "exploração-fortnite";
+        $jogos = "jogos-fortnite";
+        $torneios = "torneios-fortnite";
+    }elseif($torneio['nmjogo_torneio'] == "EA FC"){
+        $img = "./img/banner_fc.png";
+        $texto = "texto-sobreposto-fc";
+        $saiba = "saiba-fc";
+        $exploracao = "exploração-fc";
+        $jogos = "jogos-fc";
+        $torneios = "torneios-fc";
+    }elseif($torneio['nmjogo_torneio'] == "Tom Clancy's Rainbow Six Siege"){
+        $img = "./img/banner-r6.png";
+        $texto = "texto-sobreposto-r6";
+        $saiba = "saiba-r6";
+        $exploracao = "exploração-r6";
+        $jogos = "jogos-r6";
+        $torneios = "torneios-r6";
+    }elseif($torneio['nmjogo_torneio'] == "League of Legends"){
+        $img = "./img/banner-lol.png";
+        $texto = "texto-sobreposto-lol";
+        $saiba = "saiba-lol";
+        $exploracao = "exploração-lol";
+        $jogos = "jogos-lol";
+        $torneios = "torneios-lol";
     }
 
 ?>
@@ -31,7 +83,7 @@
         <div class="banner">
         <img src="<?= $img ?>" alt="Counter-Strike 2">
         </div>
-        <div class="texto-sobreposto">
+        <div class="<?= $texto ?>">
             <h1><i><b><?= $torneio['nome_torneio'] ?></b></i></h1>
         </div>
         <div class="texto-sobreposto2">
@@ -40,16 +92,16 @@
         <div class="texto-sobreposto3">
             <h4><i><b>Mais de R$<?= $torneio['premiacao'] ?> em prêmios para equipes!</b></i></h4>
         </div>
-        <div class="saiba">
+        <div class="<?= $saiba ?>">
             <a href="?id=<?= $id ?>"><i>SAIBA MAIS...</i></a>
         </div>
         <div class="preto">
             
             <div class="explorar">
-                <h1><i><b>EXPLORE OUTRAS <span class="exploração">COMPETIÇÕES</span> </class></b></i></h1>
+                <h1><i><b>EXPLORE OUTRAS <span class="<?= $exploracao ?>">COMPETIÇÕES</span> </class></b></i></h1>
             </div>
             <div class="outros">
-            <h1><i><b>DE <span class="jogos">OUTROS</span> GRANDES JOGOS</b></i></h1>
+            <h1><i><b>DE <span class="<?= $jogos ?>">OUTROS</span> GRANDES JOGOS</b></i></h1>
             </div>
             </div>
 
@@ -62,7 +114,7 @@
             
             </section>
             <div class="fundoTorneios">
-            <div class="torneios">
+            <div class="<?= $torneios ?>">
                 <a href="torneios.php"><b><i>VER TORNEIOS</i></b></a>
             </div>
             </div>

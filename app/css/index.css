@@ -11,11 +11,76 @@
     display: block;
 }
 
-.texto-sobreposto {
+.texto-sobreposto-cs2{
   position: absolute; 
   top: 70%; 
-  right: 60%; 
+  margin-left: 50px; 
   color: rgb(235, 120, 26); 
+  font-size: 3em; 
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+  font-weight: 600; 
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.texto-sobreposto-valorant{
+  position: absolute; 
+  top: 70%; 
+  margin-left: 50px;
+  color: #ff5a5f;; 
+  font-size: 3em; 
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+  font-weight: 600; 
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.texto-sobreposto-rocket{
+  position: absolute; 
+  top: 70%; 
+  margin-left: 50px;
+  color: #3fa9f5;; 
+  font-size: 3em; 
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+  font-weight: 600; 
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.texto-sobreposto-fortnite{
+  position: absolute; 
+  top: 70%; 
+  margin-left: 50px;
+  color: #3855fc; 
+  font-size: 3em; 
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+  font-weight: 600; 
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.texto-sobreposto-fc{
+  position: absolute; 
+  top: 70%; 
+  margin-left: 50px;
+  color: #3ddc84; 
+  font-size: 3em; 
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+  font-weight: 600; 
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+.texto-sobreposto-r6{
+  position: absolute; 
+  top: 70%; 
+  margin-left: 50px;
+  color: #414141; 
+  font-size: 3em; 
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+  font-weight: 600; 
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.texto-sobreposto-lol{
+  position: absolute; 
+  top: 70%; 
+  margin-left: 50px;
+  color: #c8a24a; 
   font-size: 3em; 
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
   font-weight: 600; 
@@ -48,7 +113,7 @@
   text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
-.saiba a {
+.saiba-cs2 a {
 position: absolute; 
 top: 91.5%; 
 right: 53%; 
@@ -61,7 +126,127 @@ border: none;
 text-decoration: none;
 }
 
-.saiba a:hover {
+.saiba-valorant a {
+position: absolute; 
+top: 91.5%; 
+right: 53%; 
+color: #ff5a5f; 
+font-size: 2em; 
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+font-weight: 600; 
+background: transparent;
+border: none;
+text-decoration: none;
+}
+
+.saiba-rocket a {
+position: absolute; 
+top: 91.5%; 
+right: 53%; 
+color: #3fa9f5; 
+font-size: 2em; 
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+font-weight: 600; 
+background: transparent;
+border: none;
+text-decoration: none;
+}
+
+.saiba-fortnite a {
+position: absolute; 
+top: 91.5%; 
+right: 53%; 
+color: #9b6bff; 
+font-size: 2em; 
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+font-weight: 600; 
+background: transparent;
+border: none;
+text-decoration: none;
+}
+
+.saiba-fc a {
+position: absolute; 
+top: 91.5%; 
+right: 53%; 
+color: #3ddc84; 
+font-size: 2em; 
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+font-weight: 600; 
+background: transparent;
+border: none;
+text-decoration: none;
+}
+
+.saiba-r6 a {
+position: absolute; 
+top: 91.5%; 
+right: 53%; 
+color: #414141; 
+font-size: 2em; 
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+font-weight: 600; 
+background: transparent;
+border: none;
+text-decoration: none;
+}
+
+.saiba-lol a {
+position: absolute; 
+top: 91.5%; 
+right: 53%; 
+color: #c8a24a; 
+font-size: 2em; 
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+font-weight: 600; 
+background: transparent;
+border: none;
+text-decoration: none;
+}
+
+.saiba-cs2 a:hover {
+  color: #ffffff;
+  transform: scale(1.2);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.saiba-valorant a:hover {
+  color: #ffffff;
+  transform: scale(1.2);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.saiba-rocket a:hover {
+  color: #ffffff;
+  transform: scale(1.2);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.saiba-fortnite a:hover {
+  color: #ffffff;
+  transform: scale(1.2);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.saiba-fc a:hover {
+  color: #ffffff;
+  transform: scale(1.2);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.saiba-r6 a:hover {
+  color: #ffffff;
+  transform: scale(1.2);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.saiba-lol a:hover {
   color: #ffffff;
   transform: scale(1.2);
   transition: transform 0.3s ease-in-out;
@@ -92,12 +277,60 @@ text-decoration: none;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
-.exploração{
+.exploração-cs2{
   color: rgb(235, 120, 26);
 }
 
-.jogos {
+.exploração-valorant{
+  color: #ff5a5f;
+}
+
+.exploração-rocket{
+  color: #3fa9f5;
+}
+
+.exploração-fortnite{
+  color: #9b6bff;
+}
+
+.exploração-fc{
+  color: #3ddc84;
+}
+
+.exploração-r6{
+  color: #414141;
+}
+
+.exploração-lol{
+  color: #c8a24a;
+}
+
+.jogos-cs2{
   color: rgb(235, 120, 26);
+}
+
+.jogos-valorant{
+  color: #ff5a5f;
+}
+
+.jogos-rocket{
+  color: #3fa9f5;
+}
+
+.jogos-fortnite{
+  color: #9b6bff;
+}
+
+.jogos-fc{
+  color: #3ddc84;
+}
+
+.jogos-r6{
+  color: #414141;
+}
+
+.jogos-lol{
+  color: #c8a24a;
 }
 
 .video-contentor {
@@ -140,7 +373,7 @@ overflow: hidden;
   margin-top: 75px;
 }
 
-.torneios a {
+.torneios-cs2 a {
 
 color: rgb(235, 120, 26); 
 font-size: 4.3em; 
@@ -153,14 +386,150 @@ margin-left: 725px;
 
 }
 
-.torneios:hover {
+.torneios-valorant a {
+
+color: #ff5a5f; 
+font-size: 4.3em; 
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+font-weight: 800; 
+background: transparent;
+border: none;
+text-decoration: none;
+margin-left: 725px;
+
+}
+
+.torneios-rocket a {
+
+color: #3fa9f5; 
+font-size: 4.3em; 
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+font-weight: 800; 
+background: transparent;
+border: none;
+text-decoration: none;
+margin-left: 725px;
+
+}
+
+.torneios-fortnite a {
+
+color: #9b6bff; 
+font-size: 4.3em; 
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+font-weight: 800; 
+background: transparent;
+border: none;
+text-decoration: none;
+margin-left: 725px;
+
+}
+
+.torneios-fc a {
+
+color: #3ddc84; 
+font-size: 4.3em; 
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+font-weight: 800; 
+background: transparent;
+border: none;
+text-decoration: none;
+margin-left: 725px;
+
+}
+
+.torneios-r6 a {
+
+color: #414141; 
+font-size: 4.3em; 
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+font-weight: 800; 
+background: transparent;
+border: none;
+text-decoration: none;
+margin-left: 725px;
+
+}
+
+.torneios-lol a {
+
+color: #c8a24a; 
+font-size: 4.3em; 
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+font-weight: 800; 
+background: transparent;
+border: none;
+text-decoration: none;
+margin-left: 725px;
+
+}
+
+.torneios-cs2:hover {
   color: #ffffff;
   transform: scale(1.2);
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
 }
 
-.torneios a:hover {
+.torneios-valorant:hover {
+  color: #ffffff;
+  transform: scale(1.2);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.torneios-rocket:hover {
+  color: #ffffff;
+  transform: scale(1.2);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+.torneios-fortnite:hover {
+  color: #ffffff;
+  transform: scale(1.2);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+.torneios-fc:hover {
+  color: #ffffff;
+  transform: scale(1.2);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.torneios-r6:hover {
+  color: #ffffff;
+  transform: scale(1.2);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.torneios-lol:hover {
+  color: #ffffff;
+  transform: scale(1.2);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.torneios-cs2 a:hover {
+  color: #ffffff;
+}
+.torneios-valorant a:hover {
+  color: #ffffff;
+}
+.torneios-rocket a:hover {
+  color: #ffffff;
+}
+.torneios-fortnite a:hover {
+  color: #ffffff;
+}
+.torneios-fc a:hover {
+  color: #ffffff;
+}
+.torneios-r6 a:hover {
+  color: #ffffff;
+}
+.torneios-lol a:hover {
   color: #ffffff;
 }
 

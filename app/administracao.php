@@ -27,6 +27,8 @@ $equipes = readAll($pdo, "equipes");
             <p>O formato do torneio é inválido.</p>
         <?php elseif ($_GET['erro'] == "JOGADORES_INVALIDO"): ?>
             <p>A quantidade de jogadores deve ser maior que 0.</p>
+        <?php elseif ($_GET['erro'] == "PREMIO_INVALIDO"): ?>
+            <p>O valor do premio deve ser maior ou igual a 100.</p>
         <?php elseif ($_GET['erro'] == "TAXA_INVALIDA"): ?>
             <p>A taxa do torneio não pode ser negativa.</p>
         <?php elseif ($_GET['erro'] == "ID_NAO_ENCONTRADO"): ?>
