@@ -7,6 +7,9 @@ if ($_SERVER['REQUEST_METHOD'] !== "POST") {
     exit;
 }
 
+$cadastro = $_SESSION['cadastrado']['perfil'] ?? null;
+
+$tipo = null;
 
 $nome = $_POST['nome'] ?? null;
 $jogo = $_POST['jogo'] ?? null;
@@ -22,23 +25,37 @@ $chaveamento = $_POST['chaveamento'] ?? null;
 
 $jogo = trim($_POST['jogo'] ?? '');
 
-$img = match ($jogo) {
-    "cs2"           => "./img/cs2_banner.png",
-    "valorant"      => "./img/banner_valorant.png",
-    "rocket-league" => "./img/banner_rocket.png",
-    "fortnite"      => "./img/banner-fortnite.png",
-    "fc27"          => "./img/banner_fc.png",
-    "r6-siege"      => "./img/banner-r6.png",
-    "lol"           => "./img/banner-lol.png",
-    default         => "./img/banner_padrao.png",
+if($cadastro == "root"){
+    $tipo = "gamehub";
+    $img = match ($jogo) {
+    "cs2"           => "Master League",
+    "valorant"      => "Phantom Tournament",
+    "rocket-league" => "Rocket Champions",
+    "fortnite"      => "FN Cup",
+    "fc27"          => "EA Cup",
+    "r6-siege"      => "Siege Cup",
+    "lol"           => "CNLOL",
 };
+}else{
+    $tipo = "comunidade";
+    $img = match ($jogo) {
+    "cs2"           => "Master League2",
+    "valorant"      => "Phantom Tournament2",
+    "rocket-league" => "Rocket Champion2",
+    "fortnite"      => "FN Cup2",
+    "fc27"          => "EA Cup2",
+    "r6-siege"      => "Siege Cup2",
+    "lol"           => "CNLOL2",
+};
+}
+
 
 try {
     $consulta = $pdo->prepare("
         INSERT INTO torneios 
-        (nome_torneio, nmjogo_torneio, format_torneio, qnt_jogadores, data_torneio, horainit_torneio, premiacao, img, chaveamento) 
+        (nome_torneio, nmjogo_torneio, format_torneio, qnt_jogadores, data_torneio, horainit_torneio, premiacao, img, chaveamento, tipo) 
         VALUES 
-        (:nome, :jogo, :formato, :jogadores, :data, :hora, :premio, :img, :chaveamento)
+        (:nome, :jogo, :formato, :jogadores, :data, :hora, :premio, :img, :chaveamento, :tipo)
     ");
 
     $consulta->execute([
@@ -51,8 +68,10 @@ try {
         ':premio' => $premio,
         ':img' => $img,
         ':chaveamento' => $chaveamento,
+        ':tipo' => $tipo,
     ]);
 
+    header("Location: torneios.php");
   
 } catch (PDOException $e) {
     error_log($e->getMessage());

@@ -41,6 +41,7 @@ $torneios = readAll($pdo, "torneios");
             <?php if ($t['tipo'] == "gamehub"): ?>
                 <?php
                 $slug = strtolower(str_replace(' ', '-', $t['nome_torneio']));
+                $slugimg = strtolower(str_replace(' ', '-', $t['img']));
                 $nome = explode(' ', $t['nome_torneio'], 2);
                 ?>
                 <article class="card-torneio torneio-<?= $slug ?>">
@@ -53,7 +54,7 @@ $torneios = readAll($pdo, "torneios");
                         <a href="#" class="inscrever">INSCREVER-SE</a>
                     </div>
                     <div class="card-img">
-                        <img src="./img/<?= $slug ?>.jpg" alt="<?= htmlspecialchars($t['nome_torneio']) ?>">
+                        <img src="./img/<?= $slugimg ?>.jpg" alt="<?= htmlspecialchars($t['img']) ?>">
                     </div>
                 </article>
             <?php endif ?>
@@ -70,9 +71,10 @@ $torneios = readAll($pdo, "torneios");
         <?php foreach ($torneios as $t): ?>
             <?php if ($t['tipo'] == "comunidade"): ?>
                 <?php $slug = strtolower(str_replace(' ', '-', $t['nome_torneio'])); ?>
+                <?php $slugimg = strtolower(str_replace(' ', '-', $t['img'])); ?>
                 <article class="card-comunidade">
                     <img class="card-comunidade-img"
-                        src="./img/<?= $slug ?>.jpg"
+                        src="./img/<?= $slugimg ?>.jpg"
                         alt="<?= htmlspecialchars($t['nome_torneio']) ?>">
 
                     <div class="card-comunidade-info">
