@@ -55,16 +55,17 @@ INSERT INTO usuarios (
     email_conta,
     senha_conta,
     username_conta,
+    perfil,
     id_equipe
 ) VALUES
 
-('joao@gmail.com', 'senha123', 'JoaoFPS', 1),
-('pedro@gmail.com', 'senha456', 'PedroGamer', 2),
-('lucas@gmail.com', 'senha789', 'LucasPro', 3),
-('gabriel@gmail.com', 'gabriel123', 'GabsMIBR', 4),
-('matheus@gmail.com', 'matheus456', 'MathFPS', 5),
-('rafael@gmail.com', 'rafael789', 'RafaPain', 6),
-('ana@gmail.com', 'ana123', 'AnaGamer', 1);
+('joao@gmail.com', 'senha123', 'JoaoFPS', 'root', 1),
+('pedro@gmail.com', 'senha456', 'PedroGamer', 'root', 2),
+('lucas@gmail.com', 'senha789', 'LucasPro','normal', 3),
+('gabriel@gmail.com', 'gabriel123', 'GabsMIBR','normal', 4),
+('matheus@gmail.com', 'matheus456', 'MathFPS','normal', 5),
+('rafael@gmail.com', 'rafael789', 'RafaPain','normal', 6),
+('ana@gmail.com', 'ana123', 'AnaGamer','normal', 1);
 
 -- =========================================
 -- 4. TORNEIOS
@@ -86,31 +87,31 @@ INSERT INTO torneios (
 
 ('Phantom Tournament', '2026-11-30', 10000, 10,
 'Pontos corridos', 'Valorant', '16:00',
-'phantom.jpg', 'chaveamento1.png', 15.00, 'gamehub'),
+'Phantom Tournament', 'chaveamento1.png', 15.00, 'gamehub'),
 
 ('Rocket Champions', '2026-11-25', 15000, 10,
 'Eliminatoria', 'Rocket League', '15:00',
-'rocket.jpg', 'chaveamento2.png', 10.00, 'gamehub'),
+'Rocket Champions', 'chaveamento2.png', 10.00, 'gamehub'),
 
 ('Master League', '2026-12-05', 25000, 16,
 'Eliminatoria', 'Counter-Strike 2', '18:00',
-'master.jpg', 'chaveamento3.png', 20.00, 'gamehub'),
+'Master League', 'chaveamento3.png', 20.00, 'gamehub'),
 
 ('EA Cup', '2026-12-02', 250, 16,
 'Eliminatoria', 'EA FC', '12:00',
-'eacup.jpg', 'chaveamento4.png', 10.00, 'comunidade'),
+'EA Cup', 'chaveamento4.png', 10.00, 'comunidade'),
 
 ('FN Cup', '2026-12-09',500, 16,
 'Eliminatoria', 'Fortnite', '12:00',
-'fncup.jpg', 'chaveamento5.png', 10.00, 'comunidade'),
+'FN Cup', 'chaveamento5.png', 10.00, 'comunidade'),
 
 ('Siege Cup', '2026-12-14', 1000, 16,
 'Eliminatoria', 'Tom Clancy''s Rainbow Six Siege', '12:00',
-'siege.jpg', 'chaveamento6.png', 10.00, 'comunidade'),
+'Siege Cup', 'chaveamento6.png', 10.00, 'comunidade'),
 
 ('CNLOL', '2026-12-22', 750, 16,
 'Eliminatoria', 'League of Legends', '12:00',
-'cnlol.jpg', 'chaveamento7.png', 10.00, 'comunidade');
+'CNLOL', 'chaveamento7.png', 10.00, 'comunidade');
 
 -- =========================================
 -- 5. TORNEIOS_EQUIPES
