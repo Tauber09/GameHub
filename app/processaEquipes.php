@@ -43,7 +43,6 @@ try {
         ':img' => $img
     ]);
 
-    // Limpa a logo selecionada da sessão após salvar no banco
     unset($_SESSION['logoSelecionada']);
 
     header("Location: equipes.php");
