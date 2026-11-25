@@ -9,6 +9,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     $hora = $_POST['hora'];
     $formato = $_POST['formato'];
     $jogadores = $_POST['jogadores'];
+    $premiacao = $_POST['premiacao'];
     $jogo = $_POST['jogo'];
     $taxa = $_POST['taxa'];
 
@@ -45,6 +46,11 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         exit;
     }
 
+    if($premiacao < 100){
+        header("Location: administracao.php?erro=PREMIO_INVALIDO");
+        exit;
+    }
+
     if(!is_numeric($taxa) || $taxa < 0){
         header("Location: administracao.php?erro=TAXA_INVALIDA");
         exit;
@@ -56,6 +62,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         "horainit_torneio" => $hora,
         "format_torneio" => $formato,
         "qnt_jogadores" => $jogadores,
+        "premiacao" => $premiacao,
         "nmjogo_torneio" => $jogo,
         "taxa" => $taxa
     ], "id = ?", [$id]);
@@ -125,6 +132,12 @@ if(!isset($torneio) || $torneio == "" || $torneio == null){
         <label for="jogadores">Quantidade de jogadores:</label>
         <input type="number" name="jogadores" id="jogadores" required
         value="<?= $torneio['qnt_jogadores'] ?>"
+        >
+        <br>
+
+        <label for="premiacao">Valor da premiação:</label>
+        <input type="number" name="premiacao" id="premiacao" required
+        value="<?= $torneio['premiacao'] ?>"
         >
         <br>
 

@@ -26,7 +26,7 @@
       <p>As equipes podem se inscrever assim que você publicar.</p>
     </section>
 
-    <form class="formulario" action="criar_torneio.php" method="post" enctype="multipart/form-data">
+    <form class="formulario" action="./processaCriarTorneio.php" method="post" enctype="multipart/form-data">
 
      
       <fieldset class="bloco">
@@ -97,8 +97,8 @@
 
         <div class="grade grade--2">
           <div class="campo">
-            <label for="equipes">Número de jogos</label>
-            <select id="equipes" name="equipes" required>
+            <label for="chaveamento">Número de jogos</label>
+            <select id="chaveamento" name="chaveamento" required>
               <option value="" disabled selected>Selecione</option>
               <option value="1">1 jogo</option>
               <option value="2">2 jogos</option>
