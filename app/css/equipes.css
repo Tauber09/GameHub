@@ -79,7 +79,7 @@
 }
 
 .fundo-equipes {
-    background-image: url('/GameHub/app/img/preto.jpg');
+    background-color: #000000;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
