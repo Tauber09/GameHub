@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS usuarios (
     username_conta VARCHAR(100) NOT NULL UNIQUE,
     id_equipe INT,
 	CONSTRAINT fk_equipe FOREIGN KEY (id_equipe) REFERENCES  equipes(id),
-    perfil ENUM('root', 'normal') not null default 'normal'
+    perfil ENUM('root', 'normal') not null default 'normal',
     img_perfil VARCHAR(100) 
 );
 
