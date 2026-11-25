@@ -1,5 +1,11 @@
 <?php
 
+require_once __DIR__ . "/init.php";
+
+$cadastrado = $_SESSION['cadastrado']['perfil'] ?? null;
+if(!isset($cadastrado)){
+  header("Location: index.php?cadastro=USUARIO_NAO_CADASTRADO");
+}
 
 ?>
 
@@ -135,21 +141,6 @@
             <input type="number" id="premio" name="premio" min="0" step="50" placeholder="10000">
           </div>
         </div>
-
-        <div class="campo">
-          <label for="inscricao">Inscrições até</label>
-          <input type="date" id="inscricao" name="inscricao_ate">
-        </div>
-      </fieldset>
-
-        <div class="visibilidade">
-          <input type="radio" name="visibilidade" id="vis-publico" value="publico" checked>
-          <label for="vis-publico">Público</label>
-
-          <input type="radio" name="visibilidade" id="vis-privado" value="privado">
-          <label for="vis-privado">Somente com convite</label>
-        </div>
-      </fieldset>
 
       <div class="acoes">
         <a class="botao botao--secundario" href="torneios.php">Cancelar</a>
