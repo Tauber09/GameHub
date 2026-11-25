@@ -93,7 +93,7 @@
             <h4><i><b>Mais de R$<?= $torneio['premiacao'] ?> em prêmios para equipes!</b></i></h4>
         </div>
         <div class="<?= $saiba ?>">
-            <a href="?id=<?= $id ?>"><i>SAIBA MAIS...</i></a>
+            <a href="./inscricaoTorneio.php?id=<?=  $id ?>"><i>SAIBA MAIS...</i></a>
         </div>
         <div class="preto">
             
