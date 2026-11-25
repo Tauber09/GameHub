@@ -1,0 +1,215 @@
+
+:root {
+    --fundo: #121212;
+    --superficie: #1e1e1e;
+    --borda: #3a3a3a;
+    --texto: #ffffff;
+    --texto-suave: #b5b5b5;
+    --destaque: #ff4655;
+    --destaque-hover: #ff6874;
+    --raio: 24px;
+    --fonte: "Archivo", "Arial Narrow", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(#000, #262626);
+    color: var(--texto);
+    font-family: var(--fonte);
+}
+
+.destaque { color: var(--destaque); }
+
+
+.inscricao {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    gap: 64px;
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+}
+
+
+.resumo {
+    text-align: center;
+    position: sticky;
+    top: 24px;
+}
+
+.resumo__titulo {
+    margin: 0 0 24px;
+    font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+    font-weight: 800;
+    font-style: italic;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.resumo__imagem {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: var(--raio);
+}
+
+.resumo__info {
+    list-style: none;
+    margin: 28px 0 0;
+    padding: 0;
+    display: grid;
+    gap: 14px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    font-style: italic;
+    text-transform: uppercase;
+}
+
+
+.formulario {
+    background: var(--superficie);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    padding: 40px;
+}
+
+.formulario__titulo {
+    margin: 0 0 28px;
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.grupo {
+    border: 0;
+    margin: 0 0 32px;
+    padding: 0;
+    display: grid;
+    gap: 18px;
+}
+
+.grupo legend {
+    padding: 0 0 12px;
+    margin-bottom: 4px;
+    width: 100%;
+    border-bottom: 1px solid var(--borda);
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--destaque);
+}
+
+.linha {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 16px;
+}
+
+.campo { display: grid; gap: 8px; }
+
+.campo label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--texto-suave);
+}
+
+.campo small { font-weight: 400; }
+
+.campo input {
+    width: 100%;
+    padding: 14px 16px;
+    background: #121212;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    color: var(--texto);
+    font: inherit;
+    transition: border-color 0.2s;
+}
+
+.campo input::placeholder { color: #6b6b6b; }
+.campo input:hover { border-color: #5a5a5a; }
+
+.campo input:focus-visible,
+.termos input:focus-visible,
+.botao:focus-visible {
+    outline: 3px solid var(--destaque);
+    outline-offset: 2px;
+}
+
+
+
+
+.acoes {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-end;
+}
+
+.botao {
+    display: inline-block;
+    padding: 14px 36px;
+    border: 2px solid var(--destaque);
+    border-radius: 999px;
+    background: var(--destaque);
+    color: var(--texto);
+    font: inherit;
+    font-size: 1.1rem;
+    font-weight: 800;
+    font-style: italic;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, transform 0.1s;
+}
+
+.botao:hover {
+    background: var(--destaque-hover);
+    border-color: var(--destaque-hover);
+}
+
+.botao:active { transform: scale(0.97); }
+
+.botao--secundario {
+    background: transparent;
+    color: var(--texto);
+    border-color: var(--borda);
+}
+
+.botao--secundario:hover {
+    background: transparent;
+    border-color: var(--texto);
+}
+
+
+.aviso {
+    margin: 0 0 24px;
+    padding: 14px 18px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+.aviso--sucesso {
+    background: rgba(70, 200, 120, 0.12);
+    border: 1px solid #46c878;
+    color: #7ee2a4;
+}
+
+.termos {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 28px;
+    cursor: pointer;
+}
+
+.termos input {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--destaque);
+}
