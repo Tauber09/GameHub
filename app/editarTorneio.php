@@ -90,7 +90,7 @@ if(!isset($torneio) || $torneio == "" || $torneio == null){
 <head>  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="./css/editarTorneio.css">
     <title>Editar</title>
 </head>
 <body>
@@ -120,10 +120,13 @@ if(!isset($torneio) || $torneio == "" || $torneio == null){
         >
         <br>
 
-        <label for="formato">Formato:</label>
-        <input type="text" name="formato" id="formato" maxlength="50" required
-        value="<?= $torneio['format_torneio'] ?>"
-        >
+    <label for="formato">Formato:</label>
+    <select name="formato" id="formato" required>
+        <option value="<?= $torneio['format_torneio'] ?>" hidden><?= $torneio['format_torneio'] ?></option>
+        <option value="eliminatoria">Eliminatória</option>
+        <option value="pontos-corridos">Pontos Corridos</option>
+    </select>
+    <br>
         <br>
 
         <label for="jogadores">Quantidade de jogadores:</label>
