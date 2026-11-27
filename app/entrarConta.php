@@ -4,7 +4,7 @@ require_once __DIR__ . "/init.php";
 
 $usuario = null;
 $ranking = null;
-$i = 1;
+$i = null;
 
 if (isset($_SESSION['cadastrado'])) {
     $id = $_SESSION['cadastrado']['id'];
@@ -26,16 +26,17 @@ if (isset($_SESSION['cadastrado'])) {
     $ranking = $stmtRanking->fetch(PDO::FETCH_ASSOC);
 
     $stmtTorneios = $pdo->prepare("
-    SELECT COUNT(*) AS total
-    FROM torneios_equipes te
-    INNER JOIN usuarios u ON te.id_equipe = u.id_equipe
-    INNER JOIN torneios t ON te.id_torneio = t.id
-    WHERE u.id = :id AND t.data_torneio < CURDATE()
+        SELECT COUNT(*) AS total
+        FROM torneios_equipes te
+        INNER JOIN usuarios u ON te.id_equipe = u.id_equipe
+        INNER JOIN torneios t ON te.id_torneio = t.id
+        WHERE u.id = :id AND t.data_torneio < CURDATE()
     ");
     $stmtTorneios->execute(['id' => $id]);
     $totalTorneios = $stmtTorneios->fetch(PDO::FETCH_ASSOC)['total'] ?? 0;
 
     if ($ranking && $rankings) {
+        $i = 1;
         foreach ($rankings as $r) {
             if ($r['pontuacao'] > $ranking['pontuacao']) {
                 $i++;
@@ -108,7 +109,7 @@ unset($_SESSION['erro']);
 
             <div class="perfil-stats">
                 <div class="status">
-                    <span class="status-valor">#<?= $i ?></span>
+                    <span class="status-valor"><?= $i !== null ? '#' . $i : '-' ?></span>
                     <span class="status-rotulo">Ranking</span>
                 </div>
                 <div class="status">

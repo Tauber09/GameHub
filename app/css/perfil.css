@@ -1,0 +1,206 @@
+.tudo {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #2b2b2b 0%, #6b6b6b 40%, #ffffff 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container-perfil {
+    display: flex;
+    justify-content: center;
+    margin: 60px 20px;
+    font-family: 'Bebas Neue', 'Arial Narrow', sans-serif;
+}
+
+.card-perfil {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    max-width: 640px;
+    box-sizing: border-box;
+    padding: 40px 44px 36px;
+    background: #262626;
+    border-radius: 28px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.texto-laranja {
+    color: rgb(235, 120, 26);
+}
+
+.perfil-topo {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.perfil-avatar {
+    flex-shrink: 0;
+    width: 96px;
+    height: 96px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 50%;
+    background: #111;
+    border: 4px solid rgb(235, 120, 26);
+    box-shadow: 0 0 18px rgba(235, 120, 26, 0.35);
+}
+
+.perfil-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.perfil-identidade {
+    min-width: 0;
+}
+
+.perfil-rotulo {
+    margin: 0 0 4px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgb(235, 120, 26);
+}
+
+.perfil-nome {
+    margin: 0;
+    font-size: 44px;
+    font-weight: normal;
+    font-style: italic;
+    text-transform: uppercase;
+    line-height: 1;
+    color: #fff;
+    word-break: break-word;
+}
+
+.perfil-stats {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+}
+
+.status {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    min-width: 76px;
+    padding: 16px 12px;
+    background: #1a1a1a;
+    border: 2px solid #111;
+    border-radius: 14px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.6);
+}
+
+.status-valor {
+    font-size: 34px;
+    line-height: 1;
+    color: rgb(235, 120, 26);
+}
+
+.status-rotulo {
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.perfil-informacoes {
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+    font-size: 24px;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #fff;
+    border-bottom: 1px solid #666;
+}
+
+.perfil-info {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.perfil-info li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid #333;
+}
+
+.perfil-info li:last-child {
+    border-bottom: none;
+}
+
+.info-1 {
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #999;
+}
+
+.info-2 {
+    font-size: 22px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: right;
+}
+
+.info-equipe {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.equipe-mini-logo {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    background: #1a1a1a;
+    border-radius: 6px;
+    padding: 2px;
+}
+
+.erro-card {
+    align-items: center;
+    text-align: center;
+    padding: 50px 40px;
+    gap: 24px;
+}
+
+.titulo-erro {
+    margin: 0;
+    font-size: 40px;
+    font-weight: normal;
+    font-style: italic;
+    color: #fff;
+}
+
+.btn-voltar {
+    display: inline-block;
+    padding: 12px 32px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid #111;
+    border-radius: 10px;
+    font-size: 22px;
+    letter-spacing: 0.5px;
+    transition: background-color 0.2s;
+}
+
+.btn-voltar:hover {
+    background-color: rgb(235, 120, 26);
+}

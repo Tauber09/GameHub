@@ -1,10 +1,10 @@
-
 :root {
     --fundo: #121212;
     --superficie: #1e1e1e;
     --borda: #3a3a3a;
     --texto: #ffffff;
     --texto-suave: #b5b5b5;
+    --destaque: rgb(235, 120, 26);
     --destaque-valorant: #ff4655;
     --destaque-cs2: rgb(235, 120, 26);
     --destaque-rocket: #3fa9f5;
@@ -237,4 +237,186 @@ body {
 .erro-inscricao .botao {
     display: inline-block;
     margin-top: 15px;
+}
+
+.fundo-equipes {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+}
+
+.card-detalhes {
+    background: var(--superficie);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    padding: 40px;
+}
+
+.alerta {
+    margin: 0 0 24px;
+    padding: 14px 18px;
+    border-radius: 12px;
+    background: rgba(235, 120, 26, 0.14);
+    border: 1px solid var(--destaque);
+    color: #ffaa66;
+    font-weight: 600;
+}
+
+.topo-equipe {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    padding-bottom: 28px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid var(--borda);
+}
+
+.topo-equipe img {
+    width: 130px;
+    height: 130px;
+    object-fit: contain;
+    background: #121212;
+    padding: 16px;
+    border-radius: var(--raio);
+    border: 2px solid var(--destaque);
+    flex-shrink: 0;
+}
+
+.info-principal h1 {
+    margin: 0 0 12px;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 800;
+    font-style: italic;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.badge {
+    display: inline-block;
+    padding: 6px 16px;
+    margin-right: 10px;
+    margin-top: 6px;
+    border-radius: 999px;
+    background: #121212;
+    border: 1px solid var(--borda);
+    color: var(--destaque);
+    font-size: 0.9rem;
+    font-weight: 700;
+    font-style: italic;
+    text-transform: uppercase;
+}
+
+.card-detalhes h3 {
+    margin: 0 0 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--borda);
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-style: italic;
+    text-transform: uppercase;
+    color: var(--destaque);
+}
+
+.descricao-box {
+    margin: 0 0 32px;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--texto-suave);
+}
+
+.lista-membros {
+    list-style: none;
+    margin: 0 0 36px;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 14px;
+}
+
+.lista-membros li {
+    background: #121212;
+    border: 1px solid var(--borda);
+    border-left: 4px solid var(--destaque);
+    border-radius: 12px;
+    padding: 14px 18px;
+    font-size: 1rem;
+    font-weight: 700;
+    font-style: italic;
+    text-transform: uppercase;
+}
+
+.acoes-equipe {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding-top: 24px;
+    border-top: 1px solid var(--borda);
+}
+
+.btn-voltar {
+    display: inline-block;
+    padding: 14px 36px;
+    border: 2px solid var(--borda);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--texto);
+    font-size: 1.1rem;
+    font-weight: 800;
+    font-style: italic;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: border-color 0.2s, transform 0.1s;
+}
+
+.btn-voltar:hover {
+    border-color: var(--texto);
+}
+
+.btn-acao {
+    display: inline-block;
+    padding: 14px 36px;
+    border: 2px solid var(--destaque);
+    border-radius: 999px;
+    background: var(--destaque);
+    color: var(--texto);
+    font: inherit;
+    font-size: 1.1rem;
+    font-weight: 800;
+    font-style: italic;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, transform 0.1s;
+}
+
+.btn-acao:hover {
+    background: var(--destaque-hover);
+    border-color: var(--destaque-hover);
+}
+
+.btn-acao:active,
+.btn-voltar:active {
+    transform: scale(0.97);
+}
+
+.btn-sair {
+    background: #d93838;
+    border-color: #d93838;
+}
+
+.btn-sair:hover {
+    background: #ff4c4c;
+    border-color: #ff4c4c;
+}
+
+.btn-desabilitado {
+    background: #2a2a2a;
+    border-color: var(--borda);
+    color: var(--texto-suave);
+    cursor: not-allowed;
+}
+
+.btn-desabilitado:hover {
+    background: #2a2a2a;
+    border-color: var(--borda);
 }

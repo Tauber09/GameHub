@@ -1,27 +1,35 @@
 <?php
 require_once __DIR__ . "/init.php";
+
 if (!isset($_SESSION['cadastrado']['id'])) {
     header("Location: entrarConta.php");
     exit;
 }
+
 $id_usuario = $_SESSION['cadastrado']['id'];
 $username = $_SESSION['cadastrado']['username'];
+
 if ($_SERVER['REQUEST_METHOD'] == "GET" && isset($_GET['id']) && $_GET['id'] != "" && $_GET['id'] != null) {
     $id = filter_var($_GET['id'], FILTER_VALIDATE_INT);
 } else {
     header("Location: torneios.php");
     exit;
 }
+
 if (!$id) {
     header("Location: torneios.php");
     exit;
 }
-$torneio = read($pdo, "torneios", "id = $id");
+
+$torneio = read($pdo, "torneios", "id = ?", [$id]);
 if (!$torneio) {
     header("Location: torneios.php");
     exit;
 }
+
 $slug = strtolower(str_replace(' ', '-', $torneio['img']));
+$texto = "";
+
 if ($torneio['nmjogo_torneio'] == "Counter-Strike 2") {
     $texto = "destaque-cs2";
 } elseif ($torneio['nmjogo_torneio'] == "Valorant") {
@@ -37,6 +45,7 @@ if ($torneio['nmjogo_torneio'] == "Counter-Strike 2") {
 } elseif ($torneio['nmjogo_torneio'] == "League of Legends") {
     $texto = "texto-sobreposto-lol";
 }
+
 $sql = "SELECT e.id, e.nome, e.jogo_equipe
         FROM usuarios u
         INNER JOIN equipes e ON u.id_equipe = e.id
@@ -44,16 +53,30 @@ $sql = "SELECT e.id, e.nome, e.jogo_equipe
 $stmt = $pdo->prepare($sql);
 $stmt->execute([':id' => $id_usuario]);
 $equipe = $stmt->fetch(PDO::FETCH_ASSOC);
+
 $integrantes = [];
+$ja_inscrita = false;
+
 if ($equipe) {
-    $sql = "SELECT id, username_conta
-            FROM usuarios
-            WHERE id_equipe = :id_equipe
-            ORDER BY username_conta";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([':id_equipe' => $equipe['id']]);
-    $integrantes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $inscricao = read(
+        $pdo,
+        "torneios_equipes",
+        "id_equipe = ? AND id_torneio = ?",
+        [$equipe['id'], $torneio['id']]
+    );
+
+    if ($inscricao) {
+        $ja_inscrita = true;
+    } else {
+        $integrantes = readAll(
+            $pdo,
+            "usuarios",
+            "id_equipe = ? ORDER BY username_conta",
+            [$equipe['id']]
+        );
+    }
 }
+
 $equipe_compativel = $equipe && $equipe['jogo_equipe'] == $torneio['nmjogo_torneio'];
 ?>
 <!DOCTYPE html>
@@ -107,6 +130,12 @@ $equipe_compativel = $equipe && $equipe['jogo_equipe'] == $torneio['nmjogo_torne
             <h2 class="formulario__titulo">Inscrição da equipe</h2>
             <?php if (!$equipe): ?>
                 <p>Você precisa fazer parte de uma equipe para realizar a inscrição.</p>
+            <?php elseif ($ja_inscrita): ?>
+                <div class="erro-inscricao">
+                    <h3>Equipe já inscrita!</h3>
+                    <p>Sua equipe já está inscrita neste torneio.</p>
+                    <a class="botao botao--secundario" href="./torneios.php">Voltar aos torneios</a>
+                </div>
             <?php elseif (!$equipe_compativel): ?>
                 <div class="erro-inscricao">
                     <h3>Equipe incompatível!</h3>
@@ -196,4 +225,3 @@ $equipe_compativel = $equipe && $equipe['jogo_equipe'] == $torneio['nmjogo_torne
     <?php require_once __DIR__ . "/rodape.php" ?>
 </body>
 </html>
-
