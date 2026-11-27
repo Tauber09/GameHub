@@ -89,7 +89,7 @@ unset($_SESSION['erro']);
             <button type="submit">Entrar</button>
 
             <div class="separador">OU</div>
-            <a class="entrar" href="/app/criarConta.php">Criar conta</a>
+            <a class="entrar" href="./criarConta.php">Criar conta</a>
         </form>
         <?php endif ?>
 
